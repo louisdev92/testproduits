@@ -1,5 +1,4 @@
 <?php
-
 namespace Tests\Unit;
 
 use Tests\TestCase;
@@ -13,13 +12,13 @@ use RefreshDatabase;
 public function test_un_produit_peut_etre_cree_avec_donnees_valides()
 {
 $product = Product::factory()->create([
-'name' => 'Iphone',
+'name' => 'Thé vert',
 'price' => 12.50,
 'stock' => 50,
 ]);
 
 $this->assertDatabaseHas('products', [
-'name' => 'Iphone',
+'name' => 'Thé vert',
 'price' => 12.50,
 'stock' => 50,
 ]);
