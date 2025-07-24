@@ -58,15 +58,16 @@ $response->assertRedirect(route('products.index'));
 $this->assertDatabaseHas('products', ['name' => 'Thé noir']);
 }
 
-public function test_suppression_produit()
-{
-$product = Product::factory()->create();
+    public function test_suppression_produit()
+    {
+        $product = Product::factory()->create();
 
-$response = $this->delete(route('products.destroy', $product));
+        $response = $this->delete(route('products.destroy', $product));
 
-$response->assertRedirect(route('products.index'));
-$this->assertDatabaseMissing('products', ['id' => $product->id]);
-}
+        $response->assertRedirect(route('products.index'));
+
+        $this->assertSoftDeleted('products', ['id' => $product->id]);
+    }
 
 public function test_affiche_message_succes_apres_creation()
 {
