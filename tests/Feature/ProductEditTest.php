@@ -11,7 +11,7 @@ class ProductEditTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function it_displays_the_edit_form_with_existing_product_data()
+    public function affiche_le_formulaire_de_modification_avec_les_données_du_produit()
     {
         $product = Product::factory()->create([
             'name' => 'Produit Original',
@@ -29,7 +29,7 @@ class ProductEditTest extends TestCase
     }
 
     /** @test */
-    public function it_updates_the_product_with_valid_data()
+    public function met_à_jour_le_produit_avec_des_données_valides()
     {
         $product = Product::factory()->create();
 
@@ -47,7 +47,7 @@ class ProductEditTest extends TestCase
     }
 
     /** @test */
-    public function it_shows_validation_errors_when_updating_with_invalid_data()
+    public function affiche_des_erreurs_de_validation_lors_de_la_mise_à_jour_avec_des_données_invalides()
     {
         $product = Product::factory()->create();
 

@@ -11,7 +11,7 @@ class ProductShowAndDeleteTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function it_displays_the_product_details()
+    public function affiche_les_détails_du_produit()
     {
         $product = Product::factory()->create([
             'name' => 'Produit à Voir',
@@ -31,7 +31,7 @@ class ProductShowAndDeleteTest extends TestCase
     }
 
     /** @test */
-    public function it_deletes_a_product_successfully()
+    public function supprime_un_produit_avec_succès()
     {
         $product = Product::factory()->create();
 

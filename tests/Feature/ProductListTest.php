@@ -11,7 +11,7 @@ class ProductListTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function it_displays_the_product_list_page()
+    public function affiche_la_page_de_liste_des_produits()
     {
         $response = $this->get(route('products.index'));
 
@@ -20,7 +20,7 @@ class ProductListTest extends TestCase
     }
 
     /** @test */
-    public function it_displays_products_in_the_table()
+    public function affiche_les_produits_dans_le_tableau()
     {
         $product = Product::factory()->create([
             'name' => 'Produit Test',
@@ -38,7 +38,7 @@ class ProductListTest extends TestCase
     }
 
     /** @test */
-    public function it_shows_a_message_when_no_products_exist()
+    public function affiche_un_message_lorsqu_aucun_produit_n_existe()
     {
         $response = $this->get(route('products.index'));
 
