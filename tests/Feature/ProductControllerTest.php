@@ -1,3 +1,5 @@
+<?php
+
 namespace Tests\Feature;
 
 use Tests\TestCase;
@@ -18,7 +20,7 @@ $response->assertViewIs('products.index');
 public function test_cree_un_produit_valide()
 {
 $data = [
-'name' => 'Café noir',
+'name' => 'Iphone',
 'price' => 15.00,
 'stock' => 10
 ];
@@ -46,7 +48,7 @@ public function test_mise_a_jour_produit()
 {
 $product = Product::factory()->create();
 $newData = [
-'name' => 'Thé noir',
+'name' => 'Iphone',
 'price' => 20.00,
 'stock' => 25,
 ];
@@ -70,7 +72,7 @@ $this->assertDatabaseMissing('products', ['id' => $product->id]);
 public function test_affiche_message_succes_apres_creation()
 {
 $data = [
-'name' => 'Café crème',
+'name' => 'Iphone',
 'price' => 10.00,
 'stock' => 30,
 ];
